@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const { MongoClient, ServerApiVersion } = require("mongodb");
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -10,7 +11,6 @@ app.use(express.json());
 // rakibaakter635
 // oqvz4n96faKnMCxc
 
-const { MongoClient, ServerApiVersion } = require("mongodb");
 const uri =
   "mongodb+srv://rakibaakter635:oqvz4n96faKnMCxc@cluster0.bysunmk.mongodb.net/?retryWrites=true&w=majority";
 
@@ -34,7 +34,7 @@ async function run() {
     );
   } finally {
     // Ensures that the client will close when you finish/error
-    await client.close();
+    // await client.close();
   }
 }
 run().catch(console.dir);
